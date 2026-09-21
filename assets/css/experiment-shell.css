@@ -1,0 +1,99 @@
+@import url("tokens.css");
+
+/*
+  This file styles the demo-page chrome only (back link, stage frame,
+  description footer). It is intentionally kept separate from each
+  experiment's own style.css, so that file stays copy-paste clean.
+*/
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+
+.shell-back {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color 0.15s var(--ease);
+}
+
+.shell-back:hover {
+  color: var(--paper);
+}
+
+.shell-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--faint);
+}
+
+.shell-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3rem, 10vh, 6rem) var(--gutter);
+  position: relative;
+}
+
+.shell-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 78%);
+}
+
+.stage-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.shell-info {
+  border-top: 1px solid var(--line);
+  padding: 1.8rem var(--gutter) 2.4rem;
+  max-width: 640px;
+}
+
+.shell-info h1 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.shell-info p {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.shell-files {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.shell-files a {
+  color: var(--indigo);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.shell-files a:hover {
+  border-bottom-color: var(--indigo);
+}

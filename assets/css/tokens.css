@@ -1,0 +1,95 @@
+/*
+  Frontend Lab — design tokens
+  A workbench palette: warm near-black surfaces, graph-paper texture,
+  two signal colors borrowed from multimeter leads (amber / indigo).
+*/
+
+:root {
+  /* Surfaces */
+  --ink: #121110;
+  --panel: #1c1a17;
+  --panel-raised: #242019;
+  --line: rgba(242, 239, 233, 0.1);
+  --line-strong: rgba(242, 239, 233, 0.2);
+
+  /* Text */
+  --paper: #f2efe9;
+  --muted: #a39c8e;
+  --faint: #6f6a5f;
+
+  /* Signal colors */
+  --amber: #ff7a33;
+  --amber-dim: #7a4322;
+  --indigo: #7c8cff;
+  --indigo-dim: #37396f;
+
+  /* Category accents (used as small tags, not blanket theming) */
+  --cat-buttons: #ff7a33;
+  --cat-cards: #7c8cff;
+  --cat-loaders: #ffd166;
+  --cat-navigation: #4fd1c5;
+  --cat-hover-effects: #f27979;
+  --cat-micro-interactions: #b892ff;
+
+  /* Type */
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* Rhythm */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* Graph-paper texture, used sparingly behind hero + stage areas */
+.grid-texture {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+/* Respect reduced motion system-wide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

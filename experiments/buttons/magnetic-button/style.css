@@ -1,0 +1,45 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+.magnetic-btn {
+  --accent: #ff7a33;
+  --bg: #1c1a17;
+  --border: rgba(242, 239, 233, 0.2);
+  --text: #f2efe9;
+
+  position: relative;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.95rem 2.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease;
+  will-change: transform;
+}
+
+.magnetic-btn:hover {
+  border-color: var(--accent);
+}
+
+.magnetic-btn:active span {
+  transform: scale(0.94);
+}
+
+.magnetic-btn span {
+  display: inline-block;
+  transition: transform 0.1s ease;
+}

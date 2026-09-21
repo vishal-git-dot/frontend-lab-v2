@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Lab — a workbench for interface ideas</title>
+  <meta
+    name="description"
+    content="A small, self-hosted collection of modern UI experiments — buttons, cards, loaders, menus, and hover effects — built in plain HTML, CSS, and JavaScript."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <span class="brand-mark"></span>
+      Frontend Lab
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#gallery">Gallery</a>
+      <a href="#add-yours">Add your own</a>
+    </nav>
+    <span class="header-count" id="headerCount">— experiments</span>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div>
+        <h1>Small interactions, ready to copy.</h1>
+        <p>
+          A growing set of buttons, cards, loaders, menus, and hover
+          effects — each one small enough to read in a minute and drop
+          straight into whatever you're building next. No framework,
+          no build step, just HTML, CSS, and JavaScript.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#gallery">Browse experiments</a>
+          <a class="btn" href="#add-yours">Add your own</a>
+        </div>
+      </div>
+
+      <div class="specimen-board grid-texture" aria-hidden="true">
+        <div class="specimen" id="specMagnetic">
+          <button class="spec-magnet-btn" id="magnetBtn" tabindex="-1">hover me</button>
+          <span class="specimen-label">magnetic pull</span>
+        </div>
+
+        <div class="specimen" id="specSpotlight">
+          <div class="spotlight-box" id="spotlightBox"></div>
+          <span class="specimen-label">spotlight</span>
+        </div>
+
+        <div class="specimen wide">
+          <span class="specimen-label">toggle switch</span>
+          <div
+            class="hero-toggle"
+            id="heroToggle"
+            role="switch"
+            aria-checked="false"
+            aria-label="Demo toggle"
+            tabindex="-1"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="filter-bar">
+      <div class="filter-tabs" id="filterTabs" role="tablist" aria-label="Filter by category"></div>
+      <div class="search-field">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search experiments…"
+          aria-label="Search experiments"
+        />
+      </div>
+    </div>
+
+    <section class="gallery" id="gallery"></section>
+
+    <section id="add-yours" class="gallery" style="padding-top: 0;">
+      <div class="section-heading">
+        <h2>Add your own</h2>
+      </div>
+      <ol style="color: var(--muted); line-height: 1.9; max-width: 60ch; padding-left: 1.2rem;">
+        <li>Duplicate any folder under <code>/experiments/&lt;category&gt;/</code> and build your idea in its <code>index.html</code>, <code>style.css</code>, and <code>script.js</code>.</li>
+        <li>Open <code>/data/experiments.js</code> and add one object pointing at your new folder — title, category, a one-line description, and the path.</li>
+        <li>Refresh <code>index.html</code>. That's it — no build step, no generator to run.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>Frontend Lab — plain HTML, CSS &amp; JS.</span>
+    <a href="README.md">Read the README</a>
+  </footer>
+
+  <script src="data/experiments.js"></script>
+  <script src="assets/js/hero.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glitch Text · Frontend Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../assets/css/experiment-shell.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="shell-bar">
+      <a class="shell-back" href="../../../index.html">← Frontend Lab</a>
+      <span class="shell-tag">hover-effects / glitch-text-hover</span>
+    </header>
+
+    <main class="shell-stage">
+      <div class="stage-frame">
+        <h2 class="glitch" data-text="HOVER ME">HOVER ME</h2>
+      </div>
+    </main>
+
+    <footer class="shell-info">
+      <h1>Glitch Text</h1>
+      <p>
+        Two copies of the text sit on top of the original via
+        <code>::before</code> / <code>::after</code>, colored and
+        offset. On hover, each copy jitters through a short
+        <code>clip-path</code> + <code>transform</code> keyframe loop
+        at a slightly different rhythm, so they never quite line up.
+      </p>
+      <div class="shell-files">
+        <a href="style.css" target="_blank">style.css</a>
+        <a href="script.js" target="_blank">script.js</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

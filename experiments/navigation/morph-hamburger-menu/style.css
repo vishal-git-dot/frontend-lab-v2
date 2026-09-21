@@ -1,0 +1,103 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+.morph-burger {
+  --bar: #f2efe9;
+  --size: 44px;
+
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 10px;
+  border: 1px solid rgba(242, 239, 233, 0.15);
+  background: #1c1a17;
+  cursor: pointer;
+}
+
+.morph-burger span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 2px;
+  background: var(--bar);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease, top 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.morph-burger span:nth-child(1) {
+  top: 15px;
+}
+.morph-burger span:nth-child(2) {
+  top: 21px;
+}
+.morph-burger span:nth-child(3) {
+  top: 27px;
+}
+
+.morph-burger.is-open span:nth-child(1) {
+  top: 21px;
+  transform: rotate(45deg);
+}
+.morph-burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.morph-burger.is-open span:nth-child(3) {
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+.morph-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(260px, 80vw);
+  background: #1c1a17;
+  border-left: 1px solid rgba(242, 239, 233, 0.12);
+  padding: 5rem 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 40;
+}
+
+.morph-panel.is-open {
+  transform: translateX(0);
+}
+
+.morph-panel a {
+  color: #f2efe9;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.morph-panel a:hover {
+  color: #ff7a33;
+}
+
+.morph-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 30;
+}
+
+.morph-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}

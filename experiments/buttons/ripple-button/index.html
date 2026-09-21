@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ripple Click Button · Frontend Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../assets/css/experiment-shell.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="shell-bar">
+      <a class="shell-back" href="../../../index.html">← Frontend Lab</a>
+      <span class="shell-tag">buttons / ripple-button</span>
+    </header>
+
+    <main class="shell-stage">
+      <div class="stage-frame">
+        <button class="ripple-btn" id="rippleBtn">Click anywhere on me</button>
+      </div>
+    </main>
+
+    <footer class="shell-info">
+      <h1>Ripple Click Button</h1>
+      <p>
+        Each click spawns a small circle positioned exactly at the
+        click coordinates, scales it up past the button's edges, and
+        removes it once the animation finishes.
+      </p>
+      <div class="shell-files">
+        <a href="style.css" target="_blank">style.css</a>
+        <a href="script.js" target="_blank">script.js</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

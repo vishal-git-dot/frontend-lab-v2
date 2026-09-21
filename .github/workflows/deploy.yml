@@ -1,0 +1,44 @@
+name: Deploy to GitHub Pages
+
+# This site has no build step — it's plain HTML/CSS/JS with a
+# hand-written data file, so this workflow just ships the repo
+# contents straight to Pages. Nothing to install, nothing to
+# generate, nothing that can go stale between a push and a deploy.
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment in flight at a time; a newer push cancels
+# an older, still-running one rather than racing it.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site as Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

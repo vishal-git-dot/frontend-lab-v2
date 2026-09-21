@@ -1,0 +1,71 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+.toggle {
+  --w: 44px;
+  --h: 24px;
+  --off: #33302a;
+  --on: #ff7a33;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  color: #f2efe9;
+  font-size: 0.95rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Visually hidden but still focusable / announced by screen readers */
+.toggle-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.toggle-track {
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  border-radius: 999px;
+  background: var(--off);
+  transition: background 0.25s ease;
+  flex-shrink: 0;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(var(--h) - 4px);
+  height: calc(var(--h) - 4px);
+  border-radius: 50%;
+  background: #f2efe9;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.toggle-input:checked ~ .toggle-track {
+  background: var(--on);
+}
+
+.toggle-input:checked ~ .toggle-track .toggle-thumb {
+  transform: translateX(calc(var(--w) - var(--h)));
+}
+
+.toggle-input:focus-visible ~ .toggle-track {
+  outline: 2px solid #ff7a33;
+  outline-offset: 2px;
+}

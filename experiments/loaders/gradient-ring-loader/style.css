@@ -1,0 +1,39 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+.gradient-ring {
+  --size: 56px;
+  --thickness: 6px;
+  --accent: #7c8cff;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0%, var(--accent) 100%);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--thickness)),
+    #000 calc(100% - var(--thickness))
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--thickness)),
+    #000 calc(100% - var(--thickness))
+  );
+  animation: gradient-ring-spin 0.9s linear infinite;
+}
+
+@keyframes gradient-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

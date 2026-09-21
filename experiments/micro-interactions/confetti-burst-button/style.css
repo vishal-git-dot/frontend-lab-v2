@@ -1,0 +1,45 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+.confetti-btn {
+  position: relative;
+  overflow: visible;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  border: none;
+  background: #ff7a33;
+  color: #1a0f06;
+  cursor: pointer;
+}
+
+.confetti-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 10px;
+  border-radius: 1px;
+  background: var(--c, #7c8cff);
+  pointer-events: none;
+  animation: confetti-fly var(--dur, 0.7s) cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes confetti-fly {
+  to {
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
+    opacity: 0;
+  }
+}

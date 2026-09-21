@@ -1,0 +1,68 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+/* Lets the browser animate the gradient's angle smoothly.
+   Unsupported browsers simply see a static gradient — no error. */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.gradient-border-btn {
+  --bg: #1c1a17;
+  --text: #f2efe9;
+  --c1: #ff7a33;
+  --c2: #7c8cff;
+  --c3: #ffd166;
+  --border-width: 2px;
+
+  position: relative;
+  z-index: 0;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.gradient-border-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: calc(var(--border-width) * -1);
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    var(--c1),
+    var(--c2),
+    var(--c3),
+    var(--c1)
+  );
+  animation: spin-border 5s linear infinite;
+}
+
+.gradient-border-btn:hover {
+  filter: brightness(1.15);
+}
+
+@keyframes spin-border {
+  to {
+    --angle: 360deg;
+  }
+}

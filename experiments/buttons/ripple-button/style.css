@@ -1,0 +1,45 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+.ripple-btn {
+  --bg: #ff7a33;
+  --text: #1a0f06;
+  --ripple: rgba(255, 255, 255, 0.45);
+
+  position: relative;
+  overflow: hidden;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.95rem 2.2rem;
+  border: none;
+  border-radius: var(--radius, 10px);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.ripple-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--ripple);
+  transform: scale(0);
+  animation: ripple-expand 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-expand {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

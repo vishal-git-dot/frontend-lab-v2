@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morphing Hamburger Menu · Frontend Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../assets/css/experiment-shell.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="shell-bar">
+      <a class="shell-back" href="../../../index.html">← Frontend Lab</a>
+      <span class="shell-tag">navigation / morph-hamburger-menu</span>
+    </header>
+
+    <main class="shell-stage">
+      <div class="stage-frame">
+        <button
+          class="morph-burger"
+          id="morphBurger"
+          aria-expanded="false"
+          aria-controls="morphPanel"
+          aria-label="Open menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </main>
+
+    <div class="morph-backdrop" id="morphBackdrop"></div>
+    <nav class="morph-panel" id="morphPanel" aria-hidden="true">
+      <a href="#" tabindex="-1">Home</a>
+      <a href="#" tabindex="-1">Work</a>
+      <a href="#" tabindex="-1">About</a>
+      <a href="#" tabindex="-1">Contact</a>
+    </nav>
+
+    <footer class="shell-info">
+      <h1>Morphing Hamburger Menu</h1>
+      <p>
+        Three <code>span</code> bars rotate and translate into an X
+        when the button gets an <code>is-open</code> class; a side
+        panel slides in from the same trigger. <code>aria-expanded</code>
+        and focus handling keep it usable without a mouse.
+      </p>
+      <div class="shell-files">
+        <a href="style.css" target="_blank">style.css</a>
+        <a href="script.js" target="_blank">script.js</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

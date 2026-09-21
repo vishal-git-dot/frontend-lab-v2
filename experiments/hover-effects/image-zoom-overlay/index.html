@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Zoom Overlay · Frontend Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../assets/css/experiment-shell.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="shell-bar">
+      <a class="shell-back" href="../../../index.html">← Frontend Lab</a>
+      <span class="shell-tag">hover-effects / image-zoom-overlay</span>
+    </header>
+
+    <main class="shell-stage">
+      <div class="stage-frame">
+        <figure class="zoom-frame">
+          <img src="photo.svg" alt="Placeholder — swap for your own image" />
+          <figcaption class="zoom-caption">Studio session, 04</figcaption>
+        </figure>
+      </div>
+    </main>
+
+    <footer class="shell-info">
+      <h1>Image Zoom Overlay</h1>
+      <p>
+        The image sits inside a clipped frame and scales up slightly on
+        hover; a caption panel slides up from the bottom at the same
+        time. The placeholder image here is a small inline SVG — swap
+        <code>photo.svg</code> for your own file.
+      </p>
+      <div class="shell-files">
+        <a href="style.css" target="_blank">style.css</a>
+        <a href="script.js" target="_blank">script.js</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

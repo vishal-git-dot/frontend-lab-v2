@@ -1,0 +1,104 @@
+/* Page shell (chrome around the demo, safe to ignore) */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Component — copy from here down
+   ========================================================== */
+
+.glitch {
+  position: relative;
+  margin: 0;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #f2efe9;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.glitch:hover::before,
+.glitch:hover::after {
+  opacity: 1;
+}
+
+.glitch::before {
+  color: #ff7a33;
+  mix-blend-mode: screen;
+}
+
+.glitch::after {
+  color: #7c8cff;
+  mix-blend-mode: screen;
+}
+
+.glitch:hover::before {
+  animation: glitch-1 0.35s infinite linear alternate-reverse;
+}
+
+.glitch:hover::after {
+  animation: glitch-2 0.4s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip-path: inset(15% 0 65% 0);
+    transform: translate(-3px, -1px);
+  }
+  25% {
+    clip-path: inset(55% 0 10% 0);
+    transform: translate(2px, 1px);
+  }
+  50% {
+    clip-path: inset(5% 0 80% 0);
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    clip-path: inset(70% 0 8% 0);
+    transform: translate(3px, -2px);
+  }
+  100% {
+    clip-path: inset(35% 0 40% 0);
+    transform: translate(-1px, 1px);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(3px, 1px);
+  }
+  25% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(-2px, -1px);
+  }
+  50% {
+    clip-path: inset(75% 0 5% 0);
+    transform: translate(2px, 2px);
+  }
+  75% {
+    clip-path: inset(20% 0 55% 0);
+    transform: translate(-3px, -2px);
+  }
+  100% {
+    clip-path: inset(45% 0 30% 0);
+    transform: translate(1px, -1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch:hover::before,
+  .glitch:hover::after {
+    animation: none;
+  }
+}

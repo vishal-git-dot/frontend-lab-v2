@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flip Card · Frontend Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../assets/css/experiment-shell.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="shell-bar">
+      <a class="shell-back" href="../../../index.html">← Frontend Lab</a>
+      <span class="shell-tag">cards / flip-card</span>
+    </header>
+
+    <main class="shell-stage">
+      <div class="stage-frame">
+        <div class="flip-card" id="flipCard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip card, hover or press enter">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <h3>Flip Card</h3>
+              <p>Hover or press enter</p>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <p>The back is a second, full-size face — good for detail, quick actions, or a reveal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="shell-info">
+      <h1>Flip Card</h1>
+      <p>
+        Two faces are stacked with <code>backface-visibility: hidden</code>
+        and the back pre-rotated 180°. Hovering (or focusing, via
+        keyboard) rotates the shared inner wrapper, which reveals the
+        back and hides the front.
+      </p>
+      <div class="shell-files">
+        <a href="style.css" target="_blank">style.css</a>
+        <a href="script.js" target="_blank">script.js</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

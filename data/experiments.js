@@ -133,6 +133,14 @@ const EXPERIMENTS = [
       "A button that bursts a handful of small particles outward on click.",
     path: "experiments/micro-interactions/confetti-burst-button/",
   },
+    {
+    id: "glow-threads",
+    title: "Glow Threads",
+    category: "micro-interactions",
+    description:
+      "",
+    path: "experiments/micro-interactions/glow-threads/",
+  },
 ];
 
 const CATEGORIES = [

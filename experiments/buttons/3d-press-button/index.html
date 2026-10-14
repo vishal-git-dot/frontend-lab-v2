@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Press Button · Frontend Lab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../../assets/css/experiment-shell.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="shell-bar">
+      <a class="shell-back" href="../../../index.html">
+        ← Frontend Lab
+      </a>
+      <span class="shell-tag">buttons / 3d-press-button</span>
+    </header>
+
+    <main class="shell-stage">
+      <div class="stage-frame">
+        <div class="button-demo">
+          <button class="press-btn" id="pressBtn" type="button">
+            <span class="press-btn__label">Press Me</span>
+            <span class="press-btn__icon" aria-hidden="true">↗</span>
+          </button>
+
+          <p class="click-count" aria-live="polite">
+            Clicked <span id="clickCount">0</span> times
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="shell-info">
+      <h1>3D Press Button</h1>
+      <p>
+        A raised button made with layered shadows.
+        Hover to lift it and click to press it down.
+      </p>
+
+      <div class="shell-files">
+        <a href="style.css" target="_blank">style.css</a>
+        <a href="script.js" target="_blank">script.js</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

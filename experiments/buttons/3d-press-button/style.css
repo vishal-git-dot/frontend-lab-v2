@@ -1,0 +1,133 @@
+
+/* Page shell */
+body {
+  margin: 0;
+  background: #121110;
+  color: #f2efe9;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* Component */
+.button-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.press-btn {
+  --button-face: #ff7a33;
+  --button-side: #a83f12;
+  --button-text: #21140d;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  min-width: 205px;
+  padding: 1rem 1.6rem;
+
+  border: 1px solid rgba(255, 226, 201, 0.65);
+  border-radius: 16px;
+  background: var(--button-face);
+  color: var(--button-text);
+
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  /* Raised 3D appearance */
+  box-shadow:
+    0 7px 0 var(--button-side),
+    0 12px 20px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+  transform: translateY(0);
+
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 180ms ease;
+}
+
+.press-btn__label,
+.press-btn__icon {
+  position: relative;
+  pointer-events: none;
+}
+
+.press-btn__icon {
+  font-size: 1.2rem;
+  transition: transform 180ms ease;
+}
+
+/* Hover: lift the button slightly */
+.press-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 0 var(--button-side),
+    0 16px 25px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.press-btn:hover .press-btn__icon {
+  transform: translate(2px, -2px);
+}
+
+/* Press: flatten the button */
+.press-btn:active,
+.press-btn.is-pressed {
+  transform: translateY(6px);
+
+  box-shadow:
+    0 1px 0 var(--button-side),
+    0 3px 8px rgba(0, 0, 0, 0.22),
+    inset 0 2px 4px rgba(0, 0, 0, 0.12);
+
+  filter: brightness(0.98);
+}
+
+/* Keyboard accessibility */
+.press-btn:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 6px;
+}
+
+/* Click counter */
+.click-count {
+  margin: 0;
+  color: #aaa49a;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+}
+
+.click-count span {
+  color: #ffd166;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .button-demo {
+    padding: 1.25rem;
+  }
+
+  .press-btn {
+    min-width: 190px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .press-btn,
+  .press-btn__icon {
+    transition: none;
+  }
+}

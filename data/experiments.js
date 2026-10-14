@@ -141,6 +141,14 @@ const EXPERIMENTS = [
       "",
     path: "experiments/micro-interactions/glow-threads/",
   },
+  {
+  id: "3d-press-button",
+  title: "3D Press Button",
+  category: "buttons",
+  description:
+    "A raised 3D button with layered shadows, smooth hover effects, and a satisfying press-down animation.",
+  path: "experiments/buttons/3d-press-button/",
+},
 ];
 
 const CATEGORIES = [
